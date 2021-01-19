@@ -5,12 +5,14 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Merkle Groot</Authors>
     <Product>MongoSharp</Product>
-    <Description>MIT License</Description>
+    <Description>MongoSharp</Description>
     <PackageTags></PackageTags>
+    <PackageId>MongoSharp</PackageId>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.8.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.9.2" />
   </ItemGroup>
 
 </Project>
