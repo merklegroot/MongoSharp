@@ -24,17 +24,21 @@ jobs:
       
     - name: Build
       working-directory: ./src
-      run: dotnet build --no-restore
+      run: dotnet build
 
     - name: Test
       working-directory: ./src
       run: dotnet test --no-build --verbosity normal
 
+    - name: Dotnet publish
+      working-directory: ./src
+      run: dotnet publish -c Release
+
     - name: Pack
-      working-directory: ./src/MongoSharp
+      working-directory: ./src
       run: dotnet pack --configuration Release
 
-    - name: Publish
+    - name: Nuget
       working-directory: ./src/MongoSharp/bin/Release
       run: dotnet nuget push MongoSharp.0.0.1.nupkg -s https://nuget.pkg.github.com/merklegroot/index.json --api-key ${{secrets.NUGET_API_KEY}}
 
